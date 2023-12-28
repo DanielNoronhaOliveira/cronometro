@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    
+    <style>
+        
+        body{
+            background-color: rgb(14, 13, 13);
+            color: rgb(238, 241, 243);
+        }
+        div{
+            text-align: center;
+            margin-top: 250px;
+        }
+        .button{
+            color: rgb(24, 24, 241);
+        }
+        .star{
+            background-color: aqua;
+            width: 100px;
+            height: 50px;
+            border-radius: 20px;
+            font-size: 17px;
+        }
+        .pause{
+            background-color: blueviolet;
+            width: 100px;
+            height: 50px;
+            border-radius: 20px;
+            font-size: 17px;
+        }
+        .stop{
+            background-color: rgb(255, 0, 0);
+            width: 100px;
+            height: 50px;
+            border-radius: 20px;
+            font-size: 17px;
+        }
+        .star:hover{
+            background: darkgray;
+        }
+        .pause:hover{
+            background: darkgray;
+        }
+        .stop:hover{
+            background: darkgrey;
+        }
+
+
+    </style>
+    
+</head>
+<body>
+    
+    <div>
+       <h1 id="watch">00:00:00</h1>
+
+       <button class="star" onclick="star()">iniciar</button>
+       <button class="pause" onclick="pause()">pausar</button>
+       <button class="stop" onclick="stop()">reiniciar</button>
+
+    </div>
+<script>
+        var sec=0
+        var min=0
+        var hr=0
+        var interval
+    function twodigits(digit){
+            if(digit<10){
+                return('0'+digit)
+            }else{
+                return(digit)
+            }
+            }
+        
+    function star(){
+            watch()
+           interval= setInterval(watch,1000)
+        }
+    function pause(){
+            clearInterval(interval)
+        }
+    function stop(){
+            clearInterval(interval)
+            sec=0
+            min=0
+            document.getElementById('watch').innerText='00:00:00'
+        }
+    function watch(){
+                sec++
+                if(sec==60){
+                min++
+                sec=0
+                if(min==60){
+                min=0
+                hr++
+                }
+            
+            }
+            
+             document.getElementById('watch').innerText= twodigits(hr) + ':'+twodigits(min)+':'+twodigits(sec) 
+        }
+</script>
+    
+</body>
+</html>
