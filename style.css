@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(14, 13, 13);
+    color: rgb(238, 241, 243);
+}
+div{
+    text-align: center;
+    margin-top: 250px;
+}
+.button{
+    color: rgb(24, 24, 241);
+}
+.star{
+    background-color: aqua;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 17px;
+}
+.pause{
+    background-color: blueviolet;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 17px;
+}
+.stop{
+    background-color: rgb(255, 0, 0);
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 17px;
+}
+.star:hover{
+    background: darkgray;
+}
+.pause:hover{
+    background: darkgray;
+}
+.stop:hover{
+    background: darkgrey;
+}
